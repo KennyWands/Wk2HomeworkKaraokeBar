@@ -9,17 +9,18 @@ class TestRoom(unittest.TestCase):
     def setUp(self):
         self.room = room_list[0]
 
-## variable tests
+    ## variable tests
     def test_room_has_name(self):
         self.assertEqual("Early G'n'R", self.room.name)
 
     def test_room_has_capacity(self):
-        self.assertEqual(0, self.room.capacity)
+        self.assertEqual(1, self.room.capacity)
 
     def test_room_has_album(self):
         self.assertEqual("Appetite for Destruction", self.room.album.name)
 
     def test_has_admission_price(self):
         self.assertEqual(1, self.room.admission)
+
 
 ## Method tests

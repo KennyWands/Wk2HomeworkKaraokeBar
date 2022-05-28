@@ -14,7 +14,7 @@ class TestGuest(unittest.TestCase):
         self.assertEqual("Slash", self.guest.name)
 
     def test_guest_has_cash(self):
-        self.assertEqual(100, self.guest.cash)
+        self.assertEqual(99, self.guest.cash)
 
     def test_guest_has_favourite(self):
         self.assertEqual("Paradise City", self.guest.song)

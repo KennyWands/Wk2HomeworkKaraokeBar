@@ -4,3 +4,5 @@ class Room:
         self.capacity = get_capacity
         self.album = get_album
         self.admission = get_admission
+        self.guests_in_room = []
+        self.num_guests = len(self.guests_in_room)
