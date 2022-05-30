@@ -19,32 +19,41 @@ class Bar:
         return False
 
     def check_room_cap(self, room_to_join):
-        if room_to_join.num_guests < room_to_join.capacity:
+        if room_to_join.capacity > room_to_join.num_guests:
             return True
         return False
 
-    def add_guest(self, guest, room_to_join):
+    def add_guest_to_room(self, guest, room_to_join):
         room_to_join.guests_in_room.append(guest)
 
     def take_cash(self, guest, room_to_join):
         guest.cash -= room_to_join.admission
 
     def assign_room(self, guest):
-        # decide which room guest wants
+
         for room in self.rooms:
-            # print(room.album)
+
             for song in room.album.track_list:
-                # print(room.album.track_list[song])
-                # this is printing an address between each album???
+
                 if room.album.track_list[song] == guest.song:
-                    # split this up so return diffrenet if no cash etc
                     if (
                         self.check_room_cap(room) == True
                         and self.check_guest_cash(guest, room) == True
                     ):
-                        self.add_guest(guest, room)
+                        self.add_guest_to_room(guest, room)
                         self.take_cash(guest, room)
-                        print(f"* {guest.name}, {guest.cash}")
+
                         return room.name
+                    elif (
+                        self.check_room_cap(room) == False
+                        or self.check_guest_cash(guest, room) == False
+                    ):
+                        print(
+                            f"Sorry {guest.name} that room isn't for you, how about some Spice Girls"
+                        )
+                        self.add_guest_to_room(guest, self.rooms[3])
+                        self.take_cash(guest, self.rooms[3])
+
+                        return self.rooms[3].name
 
         return "You have horrible taste in music, get out."

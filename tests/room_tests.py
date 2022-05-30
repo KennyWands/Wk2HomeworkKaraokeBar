@@ -20,7 +20,7 @@ class TestRoom(unittest.TestCase):
         self.assertEqual("Appetite for Destruction", self.room.album.name)
 
     def test_has_admission_price(self):
-        self.assertEqual(1, self.room.admission)
+        self.assertEqual(5, self.room.admission)
 
 
 ## Method tests

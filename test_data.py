@@ -40,15 +40,16 @@ album4 = Album(
 )
 
 room_list = [
-    Room("Early G'n'R", 1, album1, 1),
-    Room("Late G'n'R", 2, album2, 1),
-    Room("That one Axl did on his own", 3, album3, 1),
+    Room("Early G'n'R", 1, album1, 5),
+    Room("Late G'n'R", 5, album2, 4),
+    Room("That one Axl did on his own", 0, album3, 1),
     Room("Spice Girls", 10, album4, 1),
 ]
 
 guest_list = [
     Guest("Slash", 100, "Paradise City"),
-    Guest("Duff", 50, "Get In The Ring"),
+    Guest("Gibby", 50, "Welcome to the Jungle"),
     Guest("Axl", 10, "Better"),
-    Guest("Posh", 5, "Don't Care"),
+    Guest("Posh", 2, "Don't Care"),
+    Guest("Phil Colins", 0, "Any thing by Phil Colins"),
 ]
